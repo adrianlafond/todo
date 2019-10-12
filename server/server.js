@@ -147,6 +147,8 @@ app.delete('/v1/todo/:id', (req, res) => {
   })
 })
 
+app.use(express.static('public'))
+
 app.get('/', (_req, res) => {
   res.sendFile(`${__dirname}/index.html`)
 })
