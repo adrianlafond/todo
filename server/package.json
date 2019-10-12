@@ -4,7 +4,7 @@
   "description": "server for todo apps",
   "main": "index.js",
   "scripts": {
-    "start": "npm run assets && node server.js",
+    "start": "npm run assets && nodemon server.js",
     "test": "standard",
     "fix": "standard fix",
     "assets": "cpx \"../client/shared/todo.css\" public --clean --verbose"
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "cpx": "^1.5.0",
+    "nodemon": "^1.19.3",
     "standard": "^14.3.1"
   }
 }
