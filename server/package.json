@@ -4,8 +4,16 @@
   "description": "server for todo apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "standard",
+    "fix": "standard fix"
   },
   "author": "Adrian Lafond <mail@adrianlafond.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
 }
