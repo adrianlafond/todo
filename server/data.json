@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "highestIndex": 0
+  },
+  "todos": [
+    { "id": 0, "complete": false, "text": "Read/write to a MongoDB instance" },
+    { "id": 1, "complete": false, "text": "Write a todo app in Vue.js" },
+    {
+      "id": 1,
+      "complete": false,
+      "text": "Write a todo app in Angular"
+    },
+    {
+      "id": 1,
+      "complete": false,
+      "text": "Write a todo app in Svelte"
+    }
+  ]
+}
