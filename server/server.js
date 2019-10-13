@@ -154,8 +154,6 @@ app.get('/', (_req, res) => {
 })
 
 app.get('/v1/todos', (_req, res)=> {
-
-  // res.send({ foo: 'bar' })
   fs.readFile('./data.json', (err, data) => {
     if (err) {
       res.sendStatus(500)
