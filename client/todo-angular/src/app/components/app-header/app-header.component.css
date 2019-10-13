@@ -9,18 +9,41 @@
   color: #fff;
 }
 
-.app-header__title {
+.app-header__title-link {
   position: absolute;
   left: 0;
   top: 0;
-  margin: 0 16px;
-  font-size: 24px;
-  font-weight: normal;
+  margin: 0 0 0 16px;
   line-height: 48px;
   max-width: 75%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.app-header__title-link:visited {
+  color: #fff;
+}
+.app-header__title-link--active {
+  /* */
+}
+.app-header__title-text {
+  margin: 0 16px;
+  font-size: 24px;
+  font-weight: normal;
+  display: inline-block;
+  /* line-height: 48px; */
+}
+.app-header__title-icon {
+  font-size: 24px;
+}
+.app-header__title-icon--active {
+  color: #888;
+}
+.app-header__title-icon {
+  font-size: 24px;
 }
 
 .app-header__menu {
@@ -29,17 +52,20 @@
   top: 0;
   line-height: 48px;
   margin: 0 16px;
+  display: flex;
+  align-items: center;
 }
 
-.app-header__menu-link {
+.app-header__link {
   color: #fff;
 }
-.app-header__menu-link:visited {
-  color: #ccc;
-}
-.app-header__menu-link:focus {
+.app-header__link:focus {
   color: #9cf;
   outline: none;
+}
+
+.app-header__menu-link:visited {
+  color: #ccc;
 }
 .app-header__menu-link--active {
   color: #ff0 !important;
@@ -47,5 +73,6 @@
 }
 
 .app-header__icon-link {
+  font-size: 24px;
   line-height: 48px;
 }

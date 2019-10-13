@@ -1,11 +1,17 @@
 <div class="app-header">
-  <h1 class="app-header__title">{{ title }}</h1>
+  <a
+    routerLink="/todos"
+    routerLinkActive="app-header__title-link--active"
+    class="app-header__link app-header__title-link">
+    <i class="material-icons app-header__title-icon" routerLinkActive="app-header__title-icon--active">home</i>
+    <h1 class="app-header__title-text">{{ title }}</h1>
+  </a>
   <div class="app-header__menu">
     <a
       routerLink="/preferences"
       routerLinkActive="app-header__menu-link--active"
       title="Preferences"
-      class="app-header__menu-link">
+      class="app-header__link app-header__menu-link">
       <i class="material-icons app-header__icon-link">settings_applications</i>
     </a>
   </div>
