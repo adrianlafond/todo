@@ -6,12 +6,13 @@
   "scripts": {
     "start": "npm run assets && nodemon server.js",
     "test": "standard",
-    "fix": "standard fix",
+    "fix": "standard --fix",
     "assets": "cpx \"../client/shared/todo.css\" public --clean --verbose"
   },
   "author": "Adrian Lafond <mail@adrianlafond.com>",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
