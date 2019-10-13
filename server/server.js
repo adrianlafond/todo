@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Perhaps a static HTML site later:
 // app.use(express.static('public'))
@@ -105,11 +105,17 @@ app.put('/v1/todo/:id', (req, res) => {
       if (index === -1) {
         res.sendStatus(400)
       } else {
-        data.todos.state[index].text = req.body.text || ''
+        try {
+          data.todos.state[index].text = req.body.text || ''
+        } catch (_error) {
+          res.sendStatus(400)
+          return
+        }
         writeData(data, err => {
           if (err) {
             res.sendStatus(500)
           } else {
+            res.set('Content-Type', 'application/json')
             res.send(data.todos.state[index])
           }
         })
