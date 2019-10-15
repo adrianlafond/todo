@@ -52,6 +52,24 @@ app.get('/v1/todos', (_req, res) => {
   })
 })
 
+app.get('/v1/todo/:id', (req, res) => {
+  readData((err, data) => {
+    if (err) {
+      res.sendStatus(500)
+    } else {
+      const todos = data.todos.state || data.todos.base
+      const id = +req.params.id
+      const index = todos.findIndex(item => item.id === id)
+      if (index === -1) {
+        res.sendStatus(404)
+      } else {
+        res.set('Content-Type', 'application/json')
+        res.send(todos[index])
+      }
+    }
+  })
+})
+
 app.post('/v1/todo', (req, res) => {
   readData((err, data) => {
     if (err) {
