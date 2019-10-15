@@ -2,6 +2,11 @@
   <p>todos works!</p>
 
   <ul>
-    <li *ngFor="let todo of todos">{{ todo.text }}</li>
+    <li *ngFor="let todo of todos">
+      <a routerLink="/todo/{{ todo.id }}">
+        {{ todo.text }}
+      </a>
+      <span *ngIf="todo.complete">-- complete</span>
+    </li>
   </ul>
 </div>
