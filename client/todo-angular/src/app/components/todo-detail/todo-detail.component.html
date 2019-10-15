@@ -1,3 +1,6 @@
 <div class="app-page">
-  <p>todo-detail works!</p>
+  <p *ngIf="todo$ | async as todo">
+    {{ todo.text }}<br>
+    {{ todo.complete ? 'complete' : 'not complete' | uppercase }}
+  </p>
 </div>
