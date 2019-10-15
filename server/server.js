@@ -30,7 +30,7 @@ function readData(callback) {
 }
 
 function writeData(data, callback) {
-  fs.writeFile('./data.json', JSON.stringify(data), err => {
+  fs.writeFile('./data.json', JSON.stringify(data, null, '  '), err => {
     callback(err)
   })
 }
@@ -80,7 +80,8 @@ app.post('/v1/todo', (req, res) => {
       const todo = {
         id: data.meta.highestIndex,
         complete: false,
-        text: req.body.text || ''
+        text: req.body.text || '',
+        notes: req.body.notes || '',
       }
       data.todos.state.push(todo)
       writeData(data, err => {

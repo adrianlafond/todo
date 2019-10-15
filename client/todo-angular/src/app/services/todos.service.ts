@@ -7,6 +7,7 @@ export interface Todo {
   id: string | number;
   text: string;
   complete: boolean;
+  notes: string;
 }
 
 @Injectable({
