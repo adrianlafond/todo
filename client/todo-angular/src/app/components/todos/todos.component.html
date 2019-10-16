@@ -1,5 +1,6 @@
 <div class="app-page">
-  <ul>
+  <p *ngIf="error">{{ error.message }}</p>
+  <ul *ngIf="!error">
     <li *ngFor="let todo of todos">
       <a routerLink="/todo/{{ todo.id }}">
         {{ todo.text }}

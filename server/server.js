@@ -42,6 +42,7 @@ function createState(todos) {
 }
 
 app.get('/v1/todos', (_req, res) => {
+  // sendStatus(500)
   readData((err, data) => {
     if (err) {
       res.sendStatus(500)
@@ -53,6 +54,7 @@ app.get('/v1/todos', (_req, res) => {
 })
 
 app.get('/v1/todo/:id', (req, res) => {
+  // sendStatus(500)
   readData((err, data) => {
     if (err) {
       res.sendStatus(500)
