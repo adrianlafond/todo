@@ -4,11 +4,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { TodosService, Todo } from '../../services/todos.service';
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  selector: 'app-todos-list',
+  templateUrl: './todos-list.component.html',
+  styleUrls: ['./todos-list.component.css']
 })
-export class TodosComponent implements OnInit {
+export class TodosListComponent implements OnInit {
   public todos: Todo[];
   public error: Error;
 

@@ -5,22 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
-import { TodosComponent } from './components/todos/todos.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
-import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
+import { TodosModule } from './todos/todos.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent,
-    TodosComponent,
     PreferencesComponent,
-    TodoDetailComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TodosModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

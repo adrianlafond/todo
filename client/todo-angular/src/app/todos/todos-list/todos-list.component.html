@@ -2,7 +2,7 @@
   <p *ngIf="error">{{ error.message }}</p>
   <ul *ngIf="!error">
     <li *ngFor="let todo of todos">
-      <a routerLink="/todo/{{ todo.id }}">
+      <a routerLink="/todos/{{ todo.id }}">
         {{ todo.text }}
       </a>
       <span *ngIf="todo.complete">-- complete</span>
