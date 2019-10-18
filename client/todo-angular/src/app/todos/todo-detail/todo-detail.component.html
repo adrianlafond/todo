@@ -1,8 +1,6 @@
-<div class="app-page">
-  <p *ngIf="error">{{ error.message }}</p>
-  <p *ngIf="!error && todo$ | async as todo">
-    {{ todo.text }}<br>
-    {{ todo.notes }}<br>
-    {{ todo.complete ? 'complete' : 'not complete' | uppercase }}
-  </p>
-</div>
+<p *ngIf="error">{{ error.message }}</p>
+<p *ngIf="!error && todo$ | async as todo">
+  {{ todo.text }}<br>
+  {{ todo.notes }}<br>
+  {{ todo.complete ? 'complete' : 'not complete' | uppercase }}
+</p>
