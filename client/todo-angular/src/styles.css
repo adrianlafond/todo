@@ -7,6 +7,7 @@
   --page-fg-color: #333;
   --link-color: #00f;
   --link-visited: #808;
+  --active-color: #960;
 
   --header-height: 48px;
 }
@@ -18,6 +19,7 @@
   --page-fg-color: #fff;
   --link-color: #ff0;
   --link-visited: #dd0;
+  --active-color: #ff0;
 }
 
 html {

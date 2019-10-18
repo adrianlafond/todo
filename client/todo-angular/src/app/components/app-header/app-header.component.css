@@ -37,9 +37,10 @@
 }
 .app-header__title-icon {
   font-size: 24px;
+  color: var(--header-fg-color);
 }
 .app-header__title-icon--active {
-  color: #888;
+  color: var(--active-color);
 }
 .app-header__title-icon {
   font-size: 24px;
@@ -55,19 +56,13 @@
   align-items: center;
 }
 
-.app-header__link {
+.app-header__link,
+.app-header__link:visited {
   color: var(--header-fg-color);
 }
-.app-header__link:focus {
-  color: #9cf;
-  outline: none;
-}
 
-.app-header__menu-link:visited {
-  color: #ccc;
-}
 .app-header__menu-link--active {
-  color: #ff0 !important;
+  color: var(--active-color) !important;
   cursor: default;
 }
 
