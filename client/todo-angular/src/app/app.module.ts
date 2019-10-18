@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { PreferencesComponent } from './components/preferences/preferences.component';
-import { TodosModule } from './todos/todos.module';
+// import { TodosModule } from './todos/todos.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    TodosModule,
+    // TodosModule,
     AppRoutingModule
   ],
   providers: [],

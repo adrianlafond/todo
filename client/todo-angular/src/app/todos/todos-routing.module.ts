@@ -7,7 +7,7 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 
 const routes: Routes = [
   {
-    path: 'todos',
+    path: '',
     component: TodosComponent,
     children: [
       {

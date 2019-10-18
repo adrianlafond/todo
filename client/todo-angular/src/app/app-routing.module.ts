@@ -6,6 +6,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
+  {
+    path: 'todos',
+    loadChildren: () => import('./todos/todos.module').then(mod => mod.TodosModule)
+  },
   { path: 'preferences', component: PreferencesComponent },
   { path: '**', component: NotFoundComponent }
 ];
