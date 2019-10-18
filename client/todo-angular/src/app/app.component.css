@@ -1,3 +1,5 @@
 .app-page {
   margin: var(--header-height) 0 24px 0;
+  background-color: var(--page-bg-color);
+  color: var(--page-fg-color);
 }
