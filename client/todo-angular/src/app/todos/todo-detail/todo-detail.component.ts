@@ -3,7 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap, catchError } from 'rxjs/operators';
 
-import { TodosService, Todo } from '../../services/todos.service';
+import { TodosService, Todo } from '../services/todos.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

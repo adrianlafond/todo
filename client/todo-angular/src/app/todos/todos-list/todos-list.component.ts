@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { TodosService, Todo } from '../../services/todos.service';
+import { TodosService, Todo } from '../services/todos.service';
 
 @Component({
   selector: 'app-todos-list',

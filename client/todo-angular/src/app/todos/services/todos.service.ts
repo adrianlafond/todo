@@ -10,9 +10,7 @@ export interface Todo {
   notes: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TodosService {
 
   constructor(private http: HttpClient) { }
