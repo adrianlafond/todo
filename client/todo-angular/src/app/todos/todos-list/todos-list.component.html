@@ -1,4 +1,8 @@
 <p *ngIf="error">{{ error.message }}</p>
-<ul *ngIf="!error">
-  <app-todo-item *ngFor="let todo of todos" [data]="todo"></app-todo-item>
+<ul *ngIf="!error" class="todos-list__list">
+  <app-todo-item
+    *ngFor="let todo of todos; last as isLast"
+    [data]="todo"
+    [isLast]="isLast">
+  </app-todo-item>
 </ul>

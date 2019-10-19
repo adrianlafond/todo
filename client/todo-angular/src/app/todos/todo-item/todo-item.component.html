@@ -1,6 +1,6 @@
-<li>
+<li class="todo-item" [ngClass]="containerClass">
+  <input type="checkbox" [(ngModel)]="isComplete">
   <a routerLink="/todos/{{ data.id }}">
     {{ data.text }}
   </a>
-  <span *ngIf="data.complete">-- complete</span>
 </li>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Todo } from '../services/todos.service';
 
 @Component({
@@ -8,10 +8,33 @@ import { Todo } from '../services/todos.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() data: Todo;
+  @Input() isLast: boolean;
+
+  private privateIsComplete = false;
+  public get isComplete() {
+    return this.privateIsComplete;
+  }
+  public set isComplete(value) {
+    this.privateIsComplete = value;
+    this.updateContainerClass();
+  }
+
+  public containerClass = {
+    'todo-item--last': false,
+    'todo-item--complete': false,
+  };
 
   constructor() { }
 
   ngOnInit() {
+    this.isComplete = this.data.complete;
+    this.updateContainerClass();
   }
 
+  updateContainerClass() {
+    this.containerClass = {
+      'todo-item--last': this.isLast,
+      'todo-item--complete': this.isComplete,
+    };
+  }
 }

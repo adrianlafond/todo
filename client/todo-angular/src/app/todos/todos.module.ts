@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { TodosComponent } from './todos/todos.component';
 import { TodosListComponent } from './todos-list/todos-list.component';
@@ -17,6 +18,7 @@ import { TodosService } from './services/todos.service';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     TodosRoutingModule
   ],
   providers: [

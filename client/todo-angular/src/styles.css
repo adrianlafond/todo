@@ -5,10 +5,13 @@
   --header-fg-color: #000;
   --page-bg-color: #fff;
   --page-fg-color: #333;
+  --page-bg-color-2: #eee;
+  --page-fg-color-2: #555;
   --link-color: #00f;
   --link-visited: #808;
   --active-color: #960;
 
+  --mid-color: #888;
   --header-height: 48px;
 }
 
@@ -17,6 +20,8 @@
   --header-fg-color: #fff;
   --page-bg-color: #333;
   --page-fg-color: #fff;
+  --page-bg-color-2: #666;
+  --page-fg-color-2: #ddd;
   --link-color: #ff0;
   --link-visited: #dd0;
   --active-color: #ff0;

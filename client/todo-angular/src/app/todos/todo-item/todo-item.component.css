@@ -1,0 +1,15 @@
+.todo-item {
+  padding: 1rem;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: var(--mid-color);
+  background-color: var(--page-bg-color);
+  color: var(--page-fg-color);
+}
+.todo-item--last {
+  border-bottom-width: 1px;
+}
+.todo-item--complete {
+  background-color: var(--page-bg-color-2);
+  color: var(--page-fg-color-2);
+}
