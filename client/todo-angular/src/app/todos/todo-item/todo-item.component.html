@@ -13,7 +13,7 @@
     type="text"
     *ngIf="isEditing"
     [(ngModel)]="data.text"
-    (blur)="isEditing = false"
+    (blur)="onTextChange($event)"
     (keypress)="onInputKey($event)"
     autofocus
     class="todo-item__input-text"

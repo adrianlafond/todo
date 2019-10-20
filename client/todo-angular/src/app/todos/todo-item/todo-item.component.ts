@@ -1,5 +1,9 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { Todo } from '../services/todos.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { Todo, TodosService } from '../services/todos.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -26,7 +30,7 @@ export class TodoItemComponent implements OnInit {
     'todo-item--complete': false,
   };
 
-  constructor() { }
+  constructor(private todosService: TodosService) { }
 
   ngOnInit() {
     this.isComplete = this.data.complete;
@@ -48,5 +52,13 @@ export class TodoItemComponent implements OnInit {
     if ($event.key === 'Enter') {
       $event.target.blur();
     }
+  }
+
+  onTextChange() {
+    this.todosService.updateTodo(this.data).subscribe(
+      (data: Todo) => this.data = data,
+      (error: HttpErrorResponse) => console.error(error)
+    );
+    this.isEditing = false;
   }
 }

@@ -119,15 +119,20 @@ app.put('/v1/reset', (_req, res) => {
 app.put('/v1/todo/:id', (req, res) => {
   readData((err, data) => {
     if (err) {
+      console.log(err)
       res.sendStatus(500)
     } else {
+      createState(data.todos)
       const id = +req.params.id
       const index = data.todos.state.findIndex(item => item.id === id)
       if (index === -1) {
         res.sendStatus(400)
       } else {
         try {
-          data.todos.state[index].text = req.body.text || ''
+          data.todos.state[index] = {
+            ...data.todos.state[index],
+            ...req.body
+          }
         } catch (_error) {
           res.sendStatus(400)
           return

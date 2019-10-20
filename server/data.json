@@ -32,7 +32,32 @@
         "notes": ""
       }
     ],
-    "state": null
+    "state": [
+      {
+        "id": 0,
+        "complete": false,
+        "text": "ok",
+        "notes": ""
+      },
+      {
+        "id": 1,
+        "complete": false,
+        "text": "Write a todo app in Vue.js",
+        "notes": "using Vuex for state management"
+      },
+      {
+        "id": 2,
+        "complete": false,
+        "text": "re-edited note",
+        "notes": "ok ok ok"
+      },
+      {
+        "id": 3,
+        "complete": false,
+        "text": "Write a todo app in Svelte",
+        "notes": ""
+      }
+    ]
   }
 }
 >>>>>>> c4d0d1f... add notes field
