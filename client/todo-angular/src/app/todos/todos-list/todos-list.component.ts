@@ -20,4 +20,13 @@ export class TodosListComponent implements OnInit {
       (error: HttpErrorResponse) => this.error = error
     );
   }
+
+  reset() {
+    if (window.confirm('All you custom todos will be lost. Do it anyway?')) {
+      this.todosService.resetTodos().subscribe(
+        (data: Todo[]) => this.todos = data,
+        (error: HttpErrorResponse) => this.error = error
+      );
+    }
+  }
 }

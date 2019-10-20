@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 
 const API_URL = 'http://localhost:3000/v1/';
 
@@ -25,11 +24,10 @@ export class TodosService {
   }
 
   public updateTodo(todo: Todo) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.http.put<Todo>(`${API_URL}todo/${todo.id}`, todo, httpOptions);
+    return this.http.put<Todo>(`${API_URL}todo/${todo.id}`, todo);
+  }
+
+  public resetTodos() {
+    return this.http.put<Todo[]>(`${API_URL}reset`, null);
   }
 }
