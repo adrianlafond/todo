@@ -1,0 +1,13 @@
+<p *ngIf="error">{{ error.message }}</p>
+<ul *ngIf="!error" class="todos-list__list">
+  <app-todo-item
+    *ngFor="let todo of todos; let isLast = last"
+    [data]="todo"
+    [isLast]="isLast">
+  </app-todo-item>
+</ul>
+
+<div class="todos-list__admin">
+  <button (click)="add()">Add new todo</button>
+  <button (click)="reset()">Reset all todos</button>
+</div>

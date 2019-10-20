@@ -1,0 +1,25 @@
+<li class="todo-item" [ngClass]="containerClass">
+  <input
+    [(ngModel)]="isComplete"
+    type="checkbox"
+    class="todo-item__checkbox"
+    (change)="save()"
+  >
+  <label
+    *ngIf="!isEditing"
+    (click)="isEditing = true">
+    {{ data.text }}
+  </label>
+  <input
+    type="text"
+    *ngIf="isEditing"
+    [(ngModel)]="data.text"
+    (blur)="save()"
+    (keypress)="onInputKey($event)"
+    autofocus
+    class="todo-item__input-text"
+  >
+  <a routerLink="/todos/{{ data.id }}" class="todo-item__detail-link">
+    <i class="material-icons app-header__icon-link">keyboard_arrow_right</i>
+  </a>
+</li>

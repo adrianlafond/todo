@@ -1,0 +1,7 @@
+.todos-list__list {
+  /* merely setting a class causes a reset */
+}
+
+.todos-list__admin {
+  margin: 1rem 0;
+}

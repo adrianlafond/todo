@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --header-bg-color: #ccc;
+  --header-fg-color: #000;
+  --page-bg-color: #fff;
+  --page-fg-color: #333;
+  --page-bg-color-2: #eee;
+  --page-fg-color-2: #555;
+  --link-color: #00f;
+  --link-visited: #808;
+  --active-color: #960;
+
+  --mid-color: #888;
+  --header-height: 48px;
+}
+
+.theme-dark {
+  --header-bg-color: #000;
+  --header-fg-color: #fff;
+  --page-bg-color: #333;
+  --page-fg-color: #fff;
+  --page-bg-color-2: #666;
+  --page-fg-color-2: #ddd;
+  --link-color: #ff0;
+  --link-visited: #dd0;
+  --active-color: #ff0;
+}
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
