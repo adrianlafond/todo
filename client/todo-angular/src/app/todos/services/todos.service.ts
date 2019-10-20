@@ -27,6 +27,16 @@ export class TodosService {
     return this.http.put<Todo>(`${API_URL}todo/${todo.id}`, todo);
   }
 
+  public addTodo() {
+    return this.http.post<Todo>(`${API_URL}todo`, {
+      text: 'new todo'
+    });
+  }
+
+  public deleteTodo(id: string | number) {
+    return this.http.delete<Todo>(`${API_URL}todo/${id}`);
+  }
+
   public resetTodos() {
     return this.http.put<Todo[]>(`${API_URL}reset`, null);
   }

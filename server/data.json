@@ -3,7 +3,7 @@
 =======
 {
   "meta": {
-    "highestIndex": 6
+    "highestIndex": 20
   },
   "todos": {
     "base": [
@@ -41,9 +41,9 @@
       },
       {
         "id": 1,
-        "complete": true,
+        "complete": false,
         "text": "Write a todo app in Vue.js",
-        "notes": "using Vuex for state management and then some cool shit\n"
+        "notes": "using Vuex for state management"
       },
       {
         "id": 2,
@@ -55,6 +55,18 @@
         "id": 3,
         "complete": false,
         "text": "Write a todo app in Svelte",
+        "notes": ""
+      },
+      {
+        "id": 19,
+        "complete": false,
+        "text": "new todo",
+        "notes": ""
+      },
+      {
+        "id": 20,
+        "complete": false,
+        "text": "new todo",
         "notes": ""
       }
     ]

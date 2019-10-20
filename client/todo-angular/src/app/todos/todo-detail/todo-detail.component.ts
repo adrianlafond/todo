@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap, catchError, tap } from 'rxjs/operators';
 
@@ -17,6 +17,7 @@ export class TodoDetailComponent implements OnInit {
   error: HttpErrorResponse;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private todosService: TodosService
   ) { }
@@ -42,6 +43,17 @@ export class TodoDetailComponent implements OnInit {
       this.nonDirty = { ...todo };
       this.todosService.updateTodo(todo).subscribe(
         (data: Todo) => this.nonDirty = data,
+        (error: HttpErrorResponse) => this.error = error
+      );
+    }
+  }
+
+  delete(todo) {
+    if (window.confirm('Really?')) {
+      this.todosService.deleteTodo(todo.id).subscribe(
+        () => {
+          this.router.navigate(['/']);
+        },
         (error: HttpErrorResponse) => this.error = error
       );
     }

@@ -81,7 +81,7 @@ app.post('/v1/todo', (req, res) => {
       data.meta.highestIndex += 1
       const todo = {
         id: data.meta.highestIndex,
-        complete: false,
+        complete: req.body.complete || false,
         text: req.body.text || '',
         notes: req.body.notes || '',
       }

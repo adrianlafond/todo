@@ -21,6 +21,16 @@ export class TodosListComponent implements OnInit {
     );
   }
 
+  add() {
+    this.todosService.addTodo().subscribe(
+      (data: Todo) => {
+        this.todos = this.todos.slice(0);
+        this.todos.push(data);
+      },
+      (error: HttpErrorResponse) => this.error = error
+    );
+  }
+
   reset() {
     if (window.confirm('All you custom todos will be lost. Do it anyway?')) {
       this.todosService.resetTodos().subscribe(

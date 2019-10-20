@@ -22,6 +22,7 @@
       class="todo-detail__textarea"
       (blur)="save(todo)"
     ></textarea>
+    <button (click)="delete(todo)">Delete</button>
   </div>
   <p *ngIf="error">{{ error.message }}</p>
 </div>
