@@ -32,7 +32,32 @@
         "notes": ""
       }
     ],
-    "state": null
+    "state": [
+      {
+        "id": 0,
+        "complete": false,
+        "text": "Read/write to a MongoDB instance",
+        "notes": ""
+      },
+      {
+        "id": 1,
+        "complete": true,
+        "text": "Write a todo app in Vue.js",
+        "notes": "using Vuex for state management and then some cool shit\n"
+      },
+      {
+        "id": 2,
+        "complete": false,
+        "text": "Write a todo app in Angular",
+        "notes": "with versions using Angular itself for state managemt, NGRX, and NGXS"
+      },
+      {
+        "id": 3,
+        "complete": false,
+        "text": "Write a todo app in Svelte",
+        "notes": ""
+      }
+    ]
   }
 }
 >>>>>>> c4d0d1f... add notes field

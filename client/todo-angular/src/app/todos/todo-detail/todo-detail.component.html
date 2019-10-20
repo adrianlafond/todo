@@ -1,6 +1,27 @@
-<p *ngIf="error">{{ error.message }}</p>
-<p *ngIf="!error && todo$ | async as todo">
-  {{ todo.text }}<br>
-  {{ todo.notes }}<br>
-  {{ todo.complete ? 'complete' : 'not complete' | uppercase }}
-</p>
+<div class="todo-detail">
+  <div *ngIf="!error && todo$ | async as todo">
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="todo.complete"
+        (change)="save(todo)"
+      >
+      complete
+    </label>
+    <textarea
+      [(ngModel)]="todo.text"
+      placeholder="title"
+      rows="2"
+      class="todo-detail__textarea"
+      (blur)="save(todo)"
+    ></textarea>
+    <textarea
+      [(ngModel)]="todo.notes"
+      placeholder="notes"
+      rows="4"
+      class="todo-detail__textarea"
+      (blur)="save(todo)"
+    ></textarea>
+  </div>
+  <p *ngIf="error">{{ error.message }}</p>
+</div>
