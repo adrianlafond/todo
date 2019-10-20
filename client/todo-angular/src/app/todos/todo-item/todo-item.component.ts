@@ -54,7 +54,8 @@ export class TodoItemComponent implements OnInit {
     }
   }
 
-  onTextChange() {
+  save() {
+    this.data.complete = this.isComplete;
     this.todosService.updateTodo(this.data).subscribe(
       (data: Todo) => this.data = data,
       (error: HttpErrorResponse) => console.error(error)

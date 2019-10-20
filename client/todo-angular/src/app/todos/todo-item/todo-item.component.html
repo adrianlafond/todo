@@ -3,6 +3,7 @@
     [(ngModel)]="isComplete"
     type="checkbox"
     class="todo-item__checkbox"
+    (change)="save()"
   >
   <label
     *ngIf="!isEditing"
@@ -13,7 +14,7 @@
     type="text"
     *ngIf="isEditing"
     [(ngModel)]="data.text"
-    (blur)="onTextChange($event)"
+    (blur)="save()"
     (keypress)="onInputKey($event)"
     autofocus
     class="todo-item__input-text"
