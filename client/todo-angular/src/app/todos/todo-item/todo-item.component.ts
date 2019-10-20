@@ -19,6 +19,8 @@ export class TodoItemComponent implements OnInit {
     this.updateContainerClass();
   }
 
+  public isEditing = false;
+
   public containerClass = {
     'todo-item--last': false,
     'todo-item--complete': false,
@@ -36,5 +38,15 @@ export class TodoItemComponent implements OnInit {
       'todo-item--last': this.isLast,
       'todo-item--complete': this.isComplete,
     };
+  }
+
+  onStartTextChange() {
+    this.isEditing = true;
+  }
+
+  onInputKey($event) {
+    if ($event.key === 'Enter') {
+      $event.target.blur();
+    }
   }
 }

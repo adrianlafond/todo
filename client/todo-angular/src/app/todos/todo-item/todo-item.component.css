@@ -6,6 +6,7 @@
   border-color: var(--mid-color);
   background-color: var(--page-bg-color);
   color: var(--page-fg-color);
+  height: 3.5rem;
 }
 .todo-item--last {
   border-bottom-width: 1px;
@@ -13,6 +14,17 @@
 .todo-item--complete {
   background-color: var(--page-bg-color-2);
   color: var(--page-fg-color-2);
+}
+
+.todo-item__checkbox {
+  margin-right: 0.5rem;
+}
+
+.todo-item__input-text {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .todo-item__detail-link {
