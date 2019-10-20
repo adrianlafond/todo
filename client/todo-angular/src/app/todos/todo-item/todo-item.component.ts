@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 
 import { Todo, TodosService } from '../services/todos.service';
 
@@ -10,7 +8,7 @@ import { Todo, TodosService } from '../services/todos.service';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent implements OnInit, OnChanges {
   @Input() data: Todo;
   @Input() isLast: boolean;
 
@@ -35,6 +33,12 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
     this.isComplete = this.data.complete;
     this.updateContainerClass();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.isLast) {
+      this.updateContainerClass();
+    }
   }
 
   updateContainerClass() {

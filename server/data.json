@@ -3,7 +3,7 @@
 =======
 {
   "meta": {
-    "highestIndex": 20
+    "highestIndex": 27
   },
   "todos": {
     "base": [
@@ -58,13 +58,7 @@
         "notes": ""
       },
       {
-        "id": 19,
-        "complete": false,
-        "text": "new todo",
-        "notes": ""
-      },
-      {
-        "id": 20,
+        "id": 27,
         "complete": false,
         "text": "new todo",
         "notes": ""

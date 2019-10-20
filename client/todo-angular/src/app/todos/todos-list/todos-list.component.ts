@@ -23,10 +23,7 @@ export class TodosListComponent implements OnInit {
 
   add() {
     this.todosService.addTodo().subscribe(
-      (data: Todo) => {
-        this.todos = this.todos.slice(0);
-        this.todos.push(data);
-      },
+      (data: Todo) => this.todos.push(data),
       (error: HttpErrorResponse) => this.error = error
     );
   }
