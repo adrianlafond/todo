@@ -1,6 +1,9 @@
 <li class="todo-item" [ngClass]="containerClass">
-  <input type="checkbox" [(ngModel)]="isComplete">
-  <a routerLink="/todos/{{ data.id }}">
+  <label>
+    <input type="checkbox" [(ngModel)]="isComplete">
     {{ data.text }}
+  </label>
+  <a routerLink="/todos/{{ data.id }}" class="todo-item__detail-link">
+    <i class="material-icons app-header__icon-link">keyboard_arrow_right</i>
   </a>
 </li>

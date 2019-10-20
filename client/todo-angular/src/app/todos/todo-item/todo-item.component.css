@@ -1,4 +1,5 @@
 .todo-item {
+  position: relative;
   padding: 1rem;
   border-width: 1px 0 0;
   border-style: solid;
@@ -12,4 +13,23 @@
 .todo-item--complete {
   background-color: var(--page-bg-color-2);
   color: var(--page-fg-color-2);
+}
+
+.todo-item__detail-link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--link-color);
+}
+.todo-item__detail-link:visited {
+  color: var(--link-visited);
+}
+.todo-item__detail-link:hover {
+  background-color: var(--page-bg-color-2);
 }
