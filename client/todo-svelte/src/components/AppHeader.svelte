@@ -74,18 +74,14 @@
 </style>
 
 <script>
+  import { link } from '../services/link';
   export let title = 'title';
-
-  function onClick(event) {
-    event.preventDefault();
-    console.log(event.currentTarget.getAttribute('href'));
-  }
 </script>
 
 <div class="app-header">
   <a
     href='/todos'
-    on:click={onClick}
+    on:click={link}
     routerLinkActive="app-header__title-link--active"
     class="app-header__link app-header__title-link">
     <i class="material-icons app-header__title-icon" routerLinkActive="app-header__title-icon--active">home</i>
@@ -94,7 +90,7 @@
   <div class="app-header__menu">
     <a
       href="/preferences"
-      on:click={onClick}
+      on:click={link}
       routerLinkActive="app-header__menu-link--active"
       title="Preferences"
       class="app-header__link app-header__menu-link">

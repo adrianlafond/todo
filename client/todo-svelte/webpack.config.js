@@ -7,7 +7,8 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-eval-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    historyApiFallback: true
   },
   entry: {
     bundle: ['./src/index.js']
