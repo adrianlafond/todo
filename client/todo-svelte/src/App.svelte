@@ -1,11 +1,5 @@
 <script>
-  export let name;
+	import AppHeader from './AppHeader.svelte';
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
-
-<h1>Hello {name}!</h1>
+<AppHeader title='Todo Svelte' />
