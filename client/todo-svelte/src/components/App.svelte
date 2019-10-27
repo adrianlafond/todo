@@ -1,5 +1,5 @@
 <script>
-import { onMount, setContext } from 'svelte';
+import { setContext, onDestroy } from 'svelte';
 import { writable } from 'svelte/store';
 import page from 'page';
 
@@ -8,6 +8,7 @@ import TodoList from './TodoList.svelte';
 import Preferences from './Preferences.svelte';
 import NotFound from './NotFound.svelte';
 
+import Routes from '../services/routes';
 import Todos from '../services/todos';
 
 const route = writable({
@@ -16,20 +17,16 @@ const route = writable({
 });
 setContext('route', route);
 
-let pageComponent = TodoList;
+let pageComponent = null;
 
-function onPage(event, component) {
-	pageComponent = component;
-	route.set(event);
-}
+const routes = Routes.subscribe(info => {
+	pageComponent = info.component;
+	route.set(info.context);
+});
 
-page.base('/');
-page('', () => page.redirect('/todos'));
-page('todos', event => onPage(event, TodoList));
-page('todo/:id', event => onPage(event, TodoList));
-page('preferences', event => onPage(event, Preferences));
-page('*', event => onPage(event, NotFound));
-page();
+onDestroy(() => {
+	routes.unsubscribe();
+})
 </script>
 
 <AppHeader title='Todo Svelte' />
