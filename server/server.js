@@ -42,7 +42,7 @@ function createState(todos) {
 }
 
 app.get('/v1/todos', (_req, res) => {
-  // sendStatus(500)
+  // res.sendStatus(500)
   readData((err, data) => {
     if (err) {
       res.sendStatus(500)
@@ -207,14 +207,15 @@ function createState(todos) {
 }
 
 app.get('/v1/todos', (_req, res) => {
-  readData((err, data) => {
-    if (err) {
-      res.sendStatus(500)
-    } else {
-      res.set('Content-Type', 'application/json')
-      res.send(data.todos.state || data.todos.base)
-    }
-  })
+  res.sendStatus(500);
+  // readData((err, data) => {
+  //   if (err) {
+  //     res.sendStatus(500)
+  //   } else {
+  //     res.set('Content-Type', 'application/json')
+  //     res.send(data.todos.state || data.todos.base)
+  //   }
+  // })
 })
 
 app.post('/v1/todo', (req, res) => {
