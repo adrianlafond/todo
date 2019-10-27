@@ -8,6 +8,8 @@ import TodoList from './TodoList.svelte';
 import Preferences from './Preferences.svelte';
 import NotFound from './NotFound.svelte';
 
+import Todos from '../services/todos';
+
 const route = writable({
 	params: {},
 	path: '',
