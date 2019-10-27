@@ -86,7 +86,7 @@ let active = {
 const route = getContext('route');
 const unsubscribeRoute = route.subscribe(context => {
   Object.keys(active).forEach(key => {
-    active[key] = key === context.canonicalPath;
+    active[key] = key === context.path;
   });
 });
 

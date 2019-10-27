@@ -1,23 +1,15 @@
 <script>
 import { setContext, onDestroy } from 'svelte';
-import { writable } from 'svelte/store';
-import page from 'page';
+import { writable } from 'svelte/store';;
 
 import AppHeader from './AppHeader.svelte';
-import TodoList from './TodoList.svelte';
-import Preferences from './Preferences.svelte';
-import NotFound from './NotFound.svelte';
 
 import Routes from '../services/routes';
 import Todos from '../services/todos';
 
-const route = writable({
-	params: {},
-	path: '',
-});
-setContext('route', route);
-
-let pageComponent = null;
+let pageComponent = null
+const route = writable(null);
+setContext('route', route);;
 
 const routes = Routes.subscribe(info => {
 	pageComponent = info.component;

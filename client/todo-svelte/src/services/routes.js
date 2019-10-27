@@ -11,8 +11,9 @@ const initialState = {
 };
 
 const update = set => {
-  function onPage(context, component) {
-    set({ component, context });
+  function onPage(event, component) {
+    const { canonicalPath: path, params } = event;
+    set({ component, context: { path, params } });
   }
 
   page.base('/');
@@ -24,7 +25,7 @@ const update = set => {
   page();
 
   return () => {
-    // stop all
+    // Stop all and clean up, but Page there is nothing to do.
   };
 };
 
