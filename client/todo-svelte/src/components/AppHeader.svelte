@@ -74,24 +74,45 @@
 </style>
 
 <script>
-  import { link } from '../services/link';
-  export let title = 'title';
+import { getContext, onDestroy } from 'svelte';
+import { link } from '../services/link';
+
+export let title = 'title';
+
+let active = {
+  '/todos': false,
+  '/preferences': false,
+};
+const route = getContext('route');
+const unsubscribeRoute = route.subscribe(context => {
+  Object.keys(active).forEach(key => {
+    active[key] = key === context.canonicalPath;
+  });
+});
+
+onDestroy(() => {
+  unsubscribeRoute();
+});
 </script>
 
 <div class="app-header">
   <a
-    href='/todos'
+    href='/'
     on:click={link}
-    routerLinkActive="app-header__title-link--active"
+    class:app-header__title-link--active={active['/todos']}
     class="app-header__link app-header__title-link">
-    <i class="material-icons app-header__title-icon" routerLinkActive="app-header__title-icon--active">home</i>
+    <i
+      class="material-icons app-header__title-icon"
+      class:app-header__title-icon--active={active['/todos']}>
+      home
+    </i>
     <h1 class="app-header__title-text">{ title }</h1>
   </a>
   <div class="app-header__menu">
     <a
       href="/preferences"
       on:click={link}
-      routerLinkActive="app-header__menu-link--active"
+      class:app-header__menu-link--active={active['/preferences']}
       title="Preferences"
       class="app-header__link app-header__menu-link">
       <i class="material-icons app-header__icon-link">settings_applications</i>
