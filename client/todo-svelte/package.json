@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cpx ../shared/todos.js ./src/services && webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "services": "cpx ../shared/todos.js ./src/services && "
   },
   "author": "Adrian Lafond <mail@adrianlafond.com>",
   "license": "MIT",
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "page": "^1.11.5",
-    "superagent": "^5.1.0"
+    "superagent": "^5.1.0",
+    "todo-shared": "file:../shared"
   }
 }

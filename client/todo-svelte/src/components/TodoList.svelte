@@ -1,9 +1,10 @@
 <script>
-import Todos from '../services/todos';
+// import Todos from '../services/todos';
+import { Todos } from 'todo-shared';
 
 let todos = [];
 let error = null;
-Todos.getTodos()
+Todos.read()
   .then(data => {
     todos = data || [];
     error = null;
