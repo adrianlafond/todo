@@ -97,6 +97,7 @@ async function enableEditing() {
   class:todo-item--last={isLast}>
   <input
     bind:checked={todo.complete}
+    on:change={save}
     type="checkbox"
     class="todo-item__checkbox"
   >
@@ -116,7 +117,7 @@ async function enableEditing() {
   </label>
   {/if}
 
-  <a href={`/todos/${todo.id}`} on:click={link} class="todo-item__detail-link">
+  <a href={`/todo/${todo.id}`} on:click={link} class="todo-item__detail-link">
     <i class="material-icons app-header__icon-link">keyboard_arrow_right</i>
   </a>
 </li>
