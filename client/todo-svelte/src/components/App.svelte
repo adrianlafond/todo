@@ -3,9 +3,7 @@ import { setContext, onDestroy } from 'svelte';
 import { writable } from 'svelte/store';
 
 import AppHeader from './AppHeader.svelte';
-
 import Routes from '../services/routes';
-import Todos from '../services/todos';
 
 let pageComponent = null
 const route = writable(null);
