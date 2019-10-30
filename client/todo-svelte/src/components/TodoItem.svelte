@@ -49,36 +49,74 @@
 </style>
 
 <script>
+import { tick } from 'svelte';
+import { Todos } from 'todo-shared';
+
+import { link } from '../services/link';
+
 export let todo = null;
 export let isLast = false;
+
+let isEditing = false;
+let textInput = null;
+let error = null;
+
+function onStartTextChange() {
+  isEditing = true;
+}
+
+function onInputKey(event) {
+  if (event.key === 'Enter') {
+    event.target.blur();
+  }
+}
+
+function save() {
+  Todos.update(todo.id, todo)
+    .then(data => {
+      todo = data;
+      error = null;
+    })
+    .catch(err => {
+      error = err;
+    });
+  isEditing = false;
+}
+
+async function enableEditing() {
+  isEditing = true;
+  // Apparently "autoFocus" is bad for accessibility ... so this is OK?
+  await tick();
+  textInput.focus();
+}
 </script>
 
 <li
   class="todo-item"
   class:todo-item--complete={todo.complete}
   class:todo-item--last={isLast}>
-  <p>{isLast}</p>
-  <!-- <input
-    [(ngModel)]="isComplete"
+  <input
+    bind:checked={todo.complete}
     type="checkbox"
     class="todo-item__checkbox"
-    (change)="save()"
   >
-  <label
-    *ngIf="!isEditing"
-    (click)="isEditing = true">
-    {{ data.text }}
-  </label>
+  {#if isEditing}
   <input
     type="text"
-    *ngIf="isEditing"
-    [(ngModel)]="data.text"
-    (blur)="save()"
-    (keypress)="onInputKey($event)"
-    autofocus
+    bind:value={todo.text}
+    on:blur={save}
+    on:keypress={onInputKey}
+    bind:this={textInput}
     class="todo-item__input-text"
   >
-  <a routerLink="/todos/{{ data.id }}" class="todo-item__detail-link">
+  {:else}
+  <label
+    on:click={enableEditing}>
+    {todo.text}
+  </label>
+  {/if}
+
+  <a href={`/todos/${todo.id}`} on:click={link} class="todo-item__detail-link">
     <i class="material-icons app-header__icon-link">keyboard_arrow_right</i>
-  </a> -->
+  </a>
 </li>

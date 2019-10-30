@@ -16,7 +16,7 @@ export class Todos {
    * If @param id is defined, returns specific Todo. If not defined, returns
    * all Todos items.
    */
-  static read(id?: string): Promise<Todo | Todo[]> {
+  static read(id?: string | number): Promise<Todo | Todo[]> {
     return new Promise((resolve, reject) => {
       const url = id ? `${API_URL}todo/${id}` : `${API_URL}todos`;
       superagent.get(url)
@@ -34,7 +34,7 @@ export class Todos {
     });
   }
 
-  static update(id: string, todo: Todo): Promise<Todo> {
+  static update(id: string | number, todo: Todo): Promise<Todo> {
     return new Promise((resolve, reject) => {
       superagent.put(`${API_URL}todo/${id}`)
         .send(todo)
@@ -43,7 +43,7 @@ export class Todos {
     });
   }
 
-  static delete(id: string): Promise<undefined> {
+  static delete(id: string | number): Promise<undefined> {
     return new Promise((resolve, reject) => {
       superagent.delete(`${API_URL}todo/${id}`)
         .then(() => resolve())
