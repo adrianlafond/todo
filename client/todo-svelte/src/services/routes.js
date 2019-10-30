@@ -26,7 +26,7 @@ const update = set => {
   page();
 
   return () => {
-    // Stop all and clean up, but Page there is nothing to do.
+    // Stop all and clean up, but in Page there is nothing to do.
   };
 };
 
