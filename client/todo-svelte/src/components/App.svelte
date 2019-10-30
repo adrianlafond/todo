@@ -1,6 +1,6 @@
 <script>
 import { setContext, onDestroy } from 'svelte';
-import { writable } from 'svelte/store';;
+import { writable } from 'svelte/store';
 
 import AppHeader from './AppHeader.svelte';
 
