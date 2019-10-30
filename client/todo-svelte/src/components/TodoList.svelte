@@ -2,14 +2,24 @@
 .todos__title {
   padding: 1rem;
 }
+.todos-list__list {
+  /* merely setting a class causes a reset */
+}
+.todos-list__admin {
+  margin: 1rem 0;
+}
 </style>
 
 <script>
-// import Todos from '../services/todos';
 import { Todos } from 'todo-shared';
+import TodoItem from './TodoItem.svelte';
 
 let todos = [];
 let error = null;
+
+function isLast(index) {
+  return index === todos.length - 1;
+}
 
 function fetch() {
   Todos.read()
@@ -57,13 +67,8 @@ fetch();
   <p>{error}</p>
   {:else}
   <ul class="todos-list__list">
-    <!-- <app-todo-item
-      *ngFor="let todo of todos; let isLast = last"
-      [data]="todo"
-      [isLast]="isLast">
-    </app-todo-item> -->
-    {#each todos as todo}
-    <li>{todo.text}</li>
+    {#each todos as todo, index (todo.id)}
+      <TodoItem todo={todo} isLast={isLast(index)} />
     {/each}
   </ul>
   {/if}
