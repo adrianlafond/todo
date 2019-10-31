@@ -11,7 +11,16 @@
 </style>
 
 <script>
-let theme = 'light';
+import { onDestroy } from 'svelte';
+import Preferences from '../services/preferences';
+
+let theme;
+
+Preferences.subscribe(data => theme = data.theme)();
+
+function onChangeTheme() {
+  Preferences.setTheme(theme)
+}
 </script>
 
 <div class="app-page">
@@ -21,10 +30,10 @@ let theme = 'light';
     <div class="prefs-block">
       <h4>Theme</h4>
       <label class="prefs-label">
-        <input type="radio" name="theme" value="dark" bind:group={theme}> Dark
+        <input type="radio" name="theme" value="dark" bind:group={theme} on:change={onChangeTheme}> Dark
       </label>
       <label class="prefs-label">
-        <input type="radio" name="theme" value="light" bind:group={theme}> Light
+        <input type="radio" name="theme" value="light" bind:group={theme} on:change={onChangeTheme}> Light
       </label>
     </div>
   </div>
