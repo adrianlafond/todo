@@ -9,11 +9,14 @@
 </style>
 
 <script>
+import { onDestroy } from 'svelte';
 import Preferences from '../services/preferences';
 
 let theme = '';
 
-Preferences.subscribe(data => theme = data.theme);
+const unsubscribe = Preferences.subscribe(data => theme = data.theme);
+
+onDestroy(unsubscribe);
 </script>
 
 <div class='container'>
