@@ -13,6 +13,7 @@
 <script>
 import { onDestroy } from 'svelte';
 import Preferences from '../services/preferences';
+import WritableTest from './WritableTest.svelte';
 
 let theme;
 
@@ -37,4 +38,8 @@ function onChangeTheme() {
       </label>
     </div>
   </div>
+
+  <WritableTest />
+  <WritableTest />
+  <WritableTest />
 </div>
