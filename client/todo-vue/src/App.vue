@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <AppHeader title='Todo Vue' />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,17 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import AppHeader from '@/components/AppHeader.vue'
+
+export default {
+  name: 'app',
+  components: {
+    AppHeader
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

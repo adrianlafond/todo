@@ -4,6 +4,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
+import '@/global.css'
+import '@/material-icons.css'
+import '@/reset.min.css'
+
 Vue.config.productionTip = false
 
 new Vue({
